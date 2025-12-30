@@ -1,0 +1,277 @@
+/* Design tokens */
+/* Hero Section */
+.hero {
+  background: radial-gradient(50% 50% at 50% 50%, #fff7f0 0%, #f3fff9 49.62%, #fff 100%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0 auto;
+  height: 110vh;
+  padding: 5rem;
+}
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem;
+  }
+}
+
+.heroText {
+  flex: 1;
+  width: 677px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  align-items: flex-start;
+}
+
+.heroTitle {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.heroTitle span {
+  display: block;
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-text);
+  margin: 0;
+  height: 129px;
+  width: 100%;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.heroImage {
+  flex: 1;
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* Buttons */
+.primaryButton {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-space-grotesk);
+  transition: opacity 0.3s ease;
+}
+
+.primaryButton:hover {
+  opacity: 0.9;
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-orange);
+  color: var(--color-orange);
+  padding: 15px 30px;
+  border-radius: 50px;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-space-grotesk);
+  transition: opacity 0.3s ease;
+}
+
+.secondaryButton:hover {
+  opacity: 0.8;
+}
+
+/* Mission Section */
+.missionSection {
+  padding: 3rem 5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.missionContent {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+.missionImage {
+  width: 592px;
+  height: 490px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.missionText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.sectionLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #00a650;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000000;
+  margin: 0;
+}
+
+.sectionDescription {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #5e5e5e;
+  margin: 0;
+  max-width: 40rem;
+}
+
+/* Values Section */
+.valuesSection {
+  background-color: #ffffff;
+  padding: 3rem 5rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.sectionTitleCenter {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000000;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.valueCard {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0px 7px 33.6px 5px rgba(154, 154, 154, 0.1);
+  position: relative;
+  text-align: left;
+}
+
+.valueTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.valueDescription {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #5e5e5e;
+  margin: 0.5rem 0;
+}
+
+.valueIcon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 107px;
+  height: 84.745px;
+}
+
+.valueIcon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .heroContent {
+    padding: 0 60px;
+    gap: 40px;
+    flex-direction: column;
+  }
+  .heroText {
+    width: 100%;
+  }
+  .heroImage {
+    width: 100%;
+    max-width: 559px;
+  }
+  .missionSection {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .missionContent {
+    flex-direction: column;
+  }
+  .missionImage {
+    width: 100%;
+    max-width: 592px;
+  }
+  .valuesSection {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 28px;
+  }
+  .heroDescription {
+    font-size: 16px;
+  }
+  .sectionTitleCenter {
+    font-size: 24px;
+  }
+  .missionSection,
+  .valuesSection {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=page.module.css.map */
