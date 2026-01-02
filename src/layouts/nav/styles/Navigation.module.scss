@@ -8,8 +8,8 @@ $font-space-grotesk: "Space Grotesk", -apple-system, BlinkMacSystemFont,
 
 /* Navigation */
 .nav {
-  position: fixed;
-  top: 0;
+  position: sticky;
+  top: 2%;
   left: 2%;
   z-index: 100;
   background: rgba(255, 255, 255, 0.6);
@@ -36,6 +36,12 @@ $font-space-grotesk: "Space Grotesk", -apple-system, BlinkMacSystemFont,
     height: 54px;
     border-radius: 50%;
     object-fit: cover;
+
+    @media screen and (max-width: 590px) {
+      width: 2rem;
+      height: 2rem;
+      object-fit: cover;
+    }
   }
 
   .logoText {
@@ -44,6 +50,10 @@ $font-space-grotesk: "Space Grotesk", -apple-system, BlinkMacSystemFont,
     color: $color-black;
     white-space: nowrap;
     margin: 0;
+
+    @media screen and (max-width: 590px) {
+      font-size: 1rem;
+    }
   }
 
   .navLinks {
@@ -53,6 +63,25 @@ $font-space-grotesk: "Space Grotesk", -apple-system, BlinkMacSystemFont,
     list-style: none;
     margin: 0 1rem;
     padding: 0;
+
+    @media screen and (max-width: 590px) {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      width: 100%;
+      display: none;
+      z-index: 100;
+      margin: 0;
+
+      &.active {
+        display: block;
+        padding: 1rem;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.6);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+      }
+    }
   }
 
   .navItem {
@@ -64,6 +93,11 @@ $font-space-grotesk: "Space Grotesk", -apple-system, BlinkMacSystemFont,
     // padding: 0.5rem;
     cursor: pointer;
     list-style: none;
+
+    @media screen and (max-width: 590px) {
+      display: block;
+      text-align: left;
+    }
   }
 
   .navLabel {
@@ -75,6 +109,9 @@ $font-space-grotesk: "Space Grotesk", -apple-system, BlinkMacSystemFont,
     position: relative;
     padding: 0.7rem 0;
 
+    @media screen and (max-width: 590px) {
+      white-space: normal;
+    }
     &::before {
       position: absolute;
       content: "";
@@ -96,6 +133,19 @@ $font-space-grotesk: "Space Grotesk", -apple-system, BlinkMacSystemFont,
     }
   }
 
+  button {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    @media screen and (max-width: 590px) {
+      display: flex;
+    }
+  }
+
   /* Responsive Design */
   @media (max-width: 1200px) {
     .nav {
@@ -103,9 +153,7 @@ $font-space-grotesk: "Space Grotesk", -apple-system, BlinkMacSystemFont,
     }
   }
 
-  @media (max-width: 768px) {
-    .nav {
-      position: fixed;
-    }
+  @media screen and (max-width: 590px) {
+    top: 1%;
   }
 }

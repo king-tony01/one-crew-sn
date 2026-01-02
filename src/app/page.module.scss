@@ -43,14 +43,16 @@
   height: 110vh;
   padding: 5rem;
 
-  @media screen and (max-width: 768px) {
-    padding: 3rem;
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    padding: 2rem;
+    height: 40vh;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 590px) {
     flex-direction: column;
-    height: auto;
-    padding: 2rem;
+    height: 50vh;
+    padding: 1rem;
+    width: 100%;
   }
 }
 
@@ -61,6 +63,12 @@
   flex-direction: column;
   gap: 27px;
   align-items: flex-start;
+
+  @media screen and (max-width: 590px) {
+    width: 100%;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
 }
 
 .heroTitle {
@@ -69,6 +77,10 @@
   line-height: normal;
   color: var(--color-black);
   margin: 0;
+
+  @media screen and (max-width: 590px) {
+    font-size: 1.5rem;
+  }
 }
 
 .heroTitle span {
@@ -81,18 +93,40 @@
   line-height: normal;
   color: var(--color-text);
   margin: 0;
-  height: 129px;
   width: 100%;
+
+  @media screen and (max-width: 590px) {
+    font-size: 1rem;
+  }
 }
 
 .heroButtons {
   display: flex;
   gap: 20px;
   align-items: center;
+
+  @media screen and (max-width: 590px) {
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    margin: 1rem 0;
+
+    a {
+      width: 100%;
+    }
+  }
 }
 
 .heroImage {
   flex: 1;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 590px) {
+    display: none;
+  }
 }
 
 .heroImage img {
@@ -164,6 +198,17 @@
   align-items: center;
   max-width: 1512px;
   margin: 0 auto;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    padding: 2rem;
+    width: 100%;
+    display: block;
+  }
+
+  @media screen and (max-width: 590px) {
+    padding: 1rem;
+    display: block;
+  }
 }
 
 .aboutContent {
@@ -171,6 +216,16 @@
   gap: 49px;
   align-items: center;
   width: 100%;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 480px) {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
 
 .aboutImage {
@@ -179,6 +234,24 @@
   background-color: var(--color-dark-gray);
   border-radius: 20px;
   flex-shrink: 0;
+
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 590px) {
+    width: 100%;
+    height: 350px;
+    border-radius: 1rem;
+  }
 }
 
 .aboutText {
@@ -186,7 +259,10 @@
   flex-direction: column;
   gap: 18px;
   align-items: flex-start;
-  width: 646px;
+
+  @media screen and (max-width: 590px) {
+    gap: 1rem;
+  }
 }
 
 .sectionLabel {
@@ -195,6 +271,11 @@
   color: var(--color-green);
   margin: 0;
   white-space: nowrap;
+
+  @media screen and (max-width: 590px) {
+    white-space: nowrap;
+    font-size: 1rem;
+  }
 }
 
 .sectionTitle {
@@ -203,6 +284,11 @@
   color: var(--color-black);
   margin: 0;
   white-space: nowrap;
+
+  @media screen and (max-width: 590px) {
+    font-size: 1.5rem;
+    white-space: normal;
+  }
 }
 
 .sectionDescription {
@@ -210,8 +296,11 @@
   font-weight: 400;
   color: var(--color-text);
   margin: 0;
-  height: 91px;
   width: 100%;
+
+  @media screen and (max-width: 590px) {
+    font-size: 1rem;
+  }
 }
 
 .sectionMoto {
@@ -220,29 +309,63 @@
   color: var(--color-text);
   margin: 0;
   white-space: nowrap;
+
+  @media screen and (max-width: 590px) {
+    white-space: normal;
+    font-size: 1rem;
+  }
 }
 
 /* Experiences Section */
 .experiencesSection {
   background-color: var(--color-light-gray);
-  padding: 104px 107px;
+  padding: 3rem 5rem;
   text-align: center;
-  max-width: 1512px;
   margin: 0 auto;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    padding: 2rem;
+  }
+
+  @media screen and (max-width: 590px) {
+    padding: 1rem;
+    margin: 3rem 0;
+  }
 }
 
 .sectionTitleCenter {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 500;
   color: var(--color-black);
   margin: 0 auto;
-  margin-top: 36px;
-  margin-bottom: 50px;
+  margin: 1rem 0;
   text-align: center;
-  max-width: 565px;
+
+  @media screen and (max-width: 590px) {
+    font-size: 1.5rem;
+  }
+}
+
+.cardWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110vh;
+  overflow: hidden;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    height: 80vh;
+  }
+
+  @media screen and (max-width: 590px) {
+    height: 65vh;
+    padding: 1rem;
+  }
 }
 
 .experienceCard {
+  position: absolute;
   background-color: var(--color-white);
   border-radius: 20px;
   padding: 20px;
@@ -253,10 +376,27 @@
 
 .experienceImagePlaceholder {
   width: 100%;
-  height: 656px;
+  height: 450px;
   background-color: var(--color-dark-gray);
   border-radius: 20px;
   margin-bottom: 15px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    height: 600px;
+  }
+
+  @media screen and (max-width: 590px) {
+    flex-direction: column;
+    height: 250px;
+  }
 }
 
 .experienceTitle {
@@ -265,6 +405,11 @@
   color: var(--color-black);
   margin: 0 0 15px 0;
   white-space: nowrap;
+  text-align: left;
+
+  @media screen and (max-width: 590px) {
+    font-size: 1.2rem;
+  }
 }
 
 .experienceDescription {
@@ -273,6 +418,7 @@
   color: var(--color-text);
   margin: 0;
   line-height: 1.5;
+  text-align: left;
 }
 
 /* Why Section */
@@ -280,12 +426,31 @@
   padding: 60px 107px;
   max-width: 1512px;
   margin: 0 auto;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    padding: 2rem;
+  }
+
+  @media screen and (max-width: 590px) {
+    padding: 1rem;
+    width: 100%;
+  }
 }
 
 .whyContent {
   display: flex;
   gap: 59px;
   align-items: center;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media screen and (max-width: 590px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 .whyImage {
@@ -294,6 +459,15 @@
   background-color: var(--color-dark-gray);
   border-radius: 20px;
   flex-shrink: 0;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 590px) {
+    width: 100%;
+    height: 300px;
+  }
 }
 
 .whyText {
@@ -301,6 +475,14 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 590px) {
+    width: 100%;
+  }
 }
 
 .whyList {
@@ -310,6 +492,10 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media screen and (max-width: 590px) {
+    gap: 1rem;
+  }
 }
 
 .whyList li {
@@ -329,6 +515,10 @@
   font-weight: 400;
   color: var(--color-text);
   white-space: nowrap;
+
+  @media screen and (max-width: 590px) {
+    white-space: normal;
+  }
 }
 
 /* CTA Section */
@@ -340,6 +530,18 @@
   flex-direction: column;
   gap: 1.5rem;
   align-items: flex-start;
+
+  @media screen and (max-width: 1200px) and (min-width: 600px) {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  @media screen and (max-width: 590px) {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
 }
 
 .ctaTitle {
@@ -348,6 +550,11 @@
   color: var(--color-black);
   margin: 0;
   white-space: nowrap;
+
+  @media screen and (max-width: 590px) {
+    white-space: normal;
+    font-size: 1.5rem;
+  }
 }
 
 .ctaDescription {
@@ -356,88 +563,11 @@
   color: var(--color-text);
   margin: 0;
   white-space: nowrap;
+
+  @media screen and (max-width: 590px) {
+    white-space: normal;
+    font-size: 1rem;
+  }
 }
 
 /* Footer */
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .heroContent {
-    padding: 0 60px;
-    gap: 40px;
-  }
-
-  .heroText {
-    width: auto;
-    flex: 1;
-  }
-
-  .heroImage {
-    width: auto;
-    flex: 1;
-  }
-
-  .aboutSection,
-  .experiencesSection,
-  .whySection,
-  .ctaSection {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  .aboutContent {
-    flex-direction: column;
-  }
-
-  .aboutImage {
-    width: 100%;
-    max-width: 540px;
-  }
-
-  .aboutText {
-    width: 100%;
-  }
-
-  .whyContent {
-    flex-direction: column;
-  }
-
-  .whyImage {
-    width: 100%;
-    max-width: 592px;
-  }
-
-  .whyText {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .heroTitle {
-    font-size: 28px;
-  }
-
-  .heroDescription {
-    font-size: 16px;
-  }
-
-  .sectionTitleCenter {
-    font-size: 24px;
-  }
-
-  .ctaTitle {
-    font-size: 28px;
-  }
-
-  .ctaDescription {
-    font-size: 16px;
-  }
-
-  .aboutSection,
-  .experiencesSection,
-  .whySection,
-  .ctaSection {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}

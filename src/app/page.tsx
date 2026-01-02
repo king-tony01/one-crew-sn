@@ -4,11 +4,112 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
 import CheckSquare from "@/components/CheckSquare";
-
-const imgGroup5 =
-  "http://localhost:3845/assets/e1372aa93d5b1cb6f30810eec4498c5c99b1e889.svg";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const [locked, setLocked] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [hasCompletedCycle, setHasCompletedCycle] = useState(false);
+
+  const TOTAL_CARDS = 5;
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = experienceRef.current;
+      if (!el) return;
+
+      const rect = el.getBoundingClientRect();
+
+      const fullyEntered =
+        rect.top <= 0 && rect.bottom >= window.innerHeight * 0.9;
+      const fullyExited = rect.bottom <= 0 || rect.top >= window.innerHeight;
+
+      if (hasCompletedCycle) {
+        // Unlock after all cards have been visited; re-arm only after leaving the section
+        if (fullyExited) {
+          setHasCompletedCycle(false);
+          setActiveIndex(0);
+        }
+        setLocked(false);
+        return;
+      }
+
+      setLocked(fullyEntered);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [hasCompletedCycle]);
+
+  useEffect(() => {
+    if (!locked) return;
+
+    const scrollY = window.scrollY;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+
+      window.scrollTo(0, scrollY);
+    };
+  }, [locked]);
+
+  useEffect(() => {
+    if (!locked) return;
+
+    let accumulator = 0;
+    let ticking = false;
+
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+
+      accumulator += e.deltaY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (accumulator > 100) {
+            setActiveIndex((i) => Math.min(i + 1, TOTAL_CARDS - 1));
+            accumulator = 0;
+          }
+
+          if (accumulator < -100) {
+            setActiveIndex((i) => Math.max(i - 1, 0));
+            accumulator = 0;
+          }
+
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("wheel", onWheel, { passive: false });
+
+    return () => window.removeEventListener("wheel", onWheel);
+  }, [locked]);
+
+  useEffect(() => {
+    if (
+      (activeIndex === TOTAL_CARDS - 1 || activeIndex === 0) &&
+      locked &&
+      hasCompletedCycle
+    ) {
+      setLocked(false);
+    }
+    if (activeIndex === TOTAL_CARDS - 1 && locked && !hasCompletedCycle) {
+      setLocked(false);
+      setHasCompletedCycle(true);
+    }
+  }, [activeIndex, locked, hasCompletedCycle]);
+
   return (
     <div className={styles.container}>
       {/* Hero Section */}
@@ -47,7 +148,9 @@ export default function Home() {
       {/* About Section */}
       <section className={styles.aboutSection}>
         <div className={styles.aboutContent}>
-          <div className={styles.aboutImage}></div>
+          <div className={styles.aboutImage}>
+            <Image src={"/about.png"} alt="" width={200} height={200} />
+          </div>
           <div className={styles.aboutText}>
             <p className={styles.sectionLabel}>About One Crew</p>
             <h2 className={styles.sectionTitle}>
@@ -71,18 +174,79 @@ export default function Home() {
       </section>
 
       {/* Experiences Section */}
-      <section className={styles.experiencesSection} id="experiences">
+      <section
+        className={styles.experiencesSection}
+        id="experiences"
+        ref={experienceRef}
+      >
         <p className={styles.sectionLabel}>Our Experiences</p>
         <h2 className={styles.sectionTitleCenter}>
-          Curated Experiences Across Culture, Lifestyle, and Business
+          Curated Experiences Across Culture,
+          <br /> Lifestyle, and Business
         </h2>
-        <div className={styles.experienceCard}>
-          <div className={styles.experienceImagePlaceholder}></div>
-          <h3 className={styles.experienceTitle}>Community Experiences</h3>
-          <p className={styles.experienceDescription}>
-            Elegant social and cultural activations that foster belonging,
-            inclusion, and authentic connection within and across communities.
-          </p>
+        <div className={styles.cardWrapper}>
+          {[
+            {
+              title: "Motor & Track Experiences",
+              description:
+                "Precision-driven motorsport and track events designed for enthusiasts, brands, and partners seeking high-energy experiences delivered with professionalism and exclusivity.",
+              image: "/track.png",
+            },
+            {
+              title: "Charity & Impact Events",
+              description:
+                "Purpose-led gatherings that unite communities and partners around meaningful causes, transforming shared experiences into lasting social impact.",
+              image: "/charity.png",
+            },
+            {
+              title: "Community Experiences",
+              description:
+                "Elegant social and cultural activations that foster belonging, inclusion, and authentic connection within and across communities.",
+              image: "/community.png",
+            },
+            {
+              title: "Business & Networking Experiences",
+              description:
+                "Private networking events and business lounges designed to facilitate high-value conversations, strategic partnerships, and professional growth.",
+              image: "/business.png",
+            },
+            {
+              title: "Lounges & Lifestyle Experiences",
+              description:
+                "Curated lifestyle settings that blend entertainment, comfort, and connection in a refined social atmosphere.",
+              image: "/lounge.png",
+            },
+          ].map((experience, index) => {
+            const offset = index - activeIndex;
+
+            return (
+              <div
+                key={index}
+                className={styles.experienceCard}
+                style={{
+                  transform: `translateY(${offset * 40}px) scale(${
+                    1 - Math.abs(offset) * 0.05
+                  })`,
+                  opacity: offset === 0 ? 1 : 0,
+                  zIndex: TOTAL_CARDS - index,
+                  transition: "transform 0.4s ease, opacity 0.4s ease",
+                }}
+              >
+                <div className={styles.experienceImagePlaceholder}>
+                  <Image
+                    src={experience.image}
+                    alt=""
+                    width={200}
+                    height={200}
+                  />
+                </div>
+                <h3 className={styles.experienceTitle}>{experience.title}</h3>
+                <p className={styles.experienceDescription}>
+                  {experience.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -96,27 +260,20 @@ export default function Home() {
               A Standard Above the Ordinary
             </h2>
             <ul className={styles.whyList}>
-              <li>
-                <CheckSquare />
-                <span>Thoughtfully curated, never generic</span>
-              </li>
-              <li>
-                <CheckSquare />
-                <span>Community-driven with a premium lens</span>
-              </li>
-              <li>
-                <CheckSquare />
-                <span>Designed to create long-term value</span>
-              </li>
-              <li>
-                <CheckSquare />
-                <span>Trusted by partners, brands, and promoters</span>
-              </li>
-              <li>
-                <CheckSquare />
-                <span>Focused on meaningful outcomes, not just attendance</span>
-              </li>
+              {[
+                "Thoughtfully curated, never generic",
+                "Community-driven with a premium lens",
+                "Designed to create long-term value",
+                "Trusted by partners, brands, and promoters",
+                "Focused on meaningful outcomes, not just attendance",
+              ].map((item, index) => (
+                <li key={index}>
+                  <CheckSquare />
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
+
             <Link href="/about" className={styles.learnMoreButton}>
               Learn more
             </Link>

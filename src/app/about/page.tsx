@@ -2,9 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Callout from "@/components/Callout";
-
-const imgGroup10 =
-  "http://localhost:3845/assets/bffa46c1ce0068fa834c8b95fc32c82cbf7be691.svg";
+import { Metadata } from "next";
 
 const values = [
   {
@@ -34,9 +32,14 @@ const values = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "",
+  description: "",
+};
+
 export default function About() {
   return (
-    <div>
+    <div className={styles.about_page}>
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroText}>
@@ -60,7 +63,7 @@ export default function About() {
         </div>
         <div className={styles.heroImage}>
           <Image
-            src={"/hero.svg"}
+            src={"/about.png"}
             alt="Hero illustration"
             width={200}
             height={200}
@@ -71,7 +74,14 @@ export default function About() {
       {/* Mission Section */}
       <section className={styles.missionSection}>
         <div className={styles.missionContent}>
-          <div className={styles.missionImage}></div>
+          <div className={styles.missionImage}>
+            <Image
+              src={"/mission.png"}
+              alt="Mission illustration"
+              width={300}
+              height={300}
+            />
+          </div>
           <div className={styles.missionText}>
             <p className={styles.sectionLabel}>Our Mission</p>
             <h2 className={styles.sectionTitle}>
@@ -90,7 +100,8 @@ export default function About() {
       <section className={styles.valuesSection}>
         <p className={styles.sectionLabel}>Our Values</p>
         <h2 className={styles.sectionTitleCenter}>
-          Curated Experiences Across Culture, Lifestyle, and Business
+          Curated Experiences Across Culture, <br />
+          Lifestyle, and Business
         </h2>
         <div className={styles.valuesGrid}>
           {values.map((value, index) => (

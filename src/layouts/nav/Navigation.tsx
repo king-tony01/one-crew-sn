@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./styles/Navigation.module.css";
 import Image from "next/image";
+import Hamburger from "@/components/Hamburger";
+import { useState } from "react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -14,6 +16,7 @@ const navItems = [
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
   return (
     <nav className={styles.nav}>
@@ -27,7 +30,7 @@ export default function Navigation() {
         />
         <p className={styles.logoText}>One Crew Social Network</p>
       </Link>
-      <ul className={styles.navLinks}>
+      <ul className={`${styles.navLinks} ${open ? styles.active : ""}`}>
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (
@@ -44,6 +47,9 @@ export default function Navigation() {
           );
         })}
       </ul>
+      <button onClick={() => setOpen((prev) => !prev)}>
+        <Hamburger />
+      </button>
     </nav>
   );
 }

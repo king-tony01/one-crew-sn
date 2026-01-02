@@ -35,16 +35,18 @@
   height: 110vh;
   padding: 5rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) and (min-width: 600px) {
   .hero {
-    padding: 3rem;
+    padding: 2rem;
+    height: 40vh;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 590px) {
   .hero {
     flex-direction: column;
-    height: auto;
-    padding: 2rem;
+    height: 50vh;
+    padding: 1rem;
+    width: 100%;
   }
 }
 
@@ -56,6 +58,13 @@
   gap: 27px;
   align-items: flex-start;
 }
+@media screen and (max-width: 590px) {
+  .heroText {
+    width: 100%;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+}
 
 .heroTitle {
   font-size: 40px;
@@ -63,6 +72,11 @@
   line-height: normal;
   color: var(--color-black);
   margin: 0;
+}
+@media screen and (max-width: 590px) {
+  .heroTitle {
+    font-size: 1.5rem;
+  }
 }
 
 .heroTitle span {
@@ -75,8 +89,12 @@
   line-height: normal;
   color: var(--color-text);
   margin: 0;
-  height: 129px;
   width: 100%;
+}
+@media screen and (max-width: 590px) {
+  .heroDescription {
+    font-size: 1rem;
+  }
 }
 
 .heroButtons {
@@ -84,9 +102,30 @@
   gap: 20px;
   align-items: center;
 }
+@media screen and (max-width: 590px) {
+  .heroButtons {
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .heroButtons a {
+    width: 100%;
+  }
+}
 
 .heroImage {
   flex: 1;
+}
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .heroImage {
+    display: none;
+  }
+}
+@media screen and (max-width: 590px) {
+  .heroImage {
+    display: none;
+  }
 }
 
 .heroImage img {
@@ -160,12 +199,37 @@
   max-width: 1512px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .aboutSection {
+    padding: 2rem;
+    width: 100%;
+    display: block;
+  }
+}
+@media screen and (max-width: 590px) {
+  .aboutSection {
+    padding: 1rem;
+    display: block;
+  }
+}
 
 .aboutContent {
   display: flex;
   gap: 49px;
   align-items: center;
   width: 100%;
+}
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .aboutContent {
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 480px) {
+  .aboutContent {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
 
 .aboutImage {
@@ -175,13 +239,37 @@
   border-radius: 20px;
   flex-shrink: 0;
 }
+.aboutImage img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+}
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .aboutImage {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 590px) {
+  .aboutImage {
+    width: 100%;
+    height: 350px;
+    border-radius: 1rem;
+  }
+}
 
 .aboutText {
   display: flex;
   flex-direction: column;
   gap: 18px;
   align-items: flex-start;
-  width: 646px;
+}
+@media screen and (max-width: 590px) {
+  .aboutText {
+    gap: 1rem;
+  }
 }
 
 .sectionLabel {
@@ -191,6 +279,12 @@
   margin: 0;
   white-space: nowrap;
 }
+@media screen and (max-width: 590px) {
+  .sectionLabel {
+    white-space: nowrap;
+    font-size: 1rem;
+  }
+}
 
 .sectionTitle {
   font-size: 32px;
@@ -199,14 +293,24 @@
   margin: 0;
   white-space: nowrap;
 }
+@media screen and (max-width: 590px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+    white-space: normal;
+  }
+}
 
 .sectionDescription {
   font-size: 16px;
   font-weight: 400;
   color: var(--color-text);
   margin: 0;
-  height: 91px;
   width: 100%;
+}
+@media screen and (max-width: 590px) {
+  .sectionDescription {
+    font-size: 1rem;
+  }
 }
 
 .sectionMoto {
@@ -216,28 +320,68 @@
   margin: 0;
   white-space: nowrap;
 }
+@media screen and (max-width: 590px) {
+  .sectionMoto {
+    white-space: normal;
+    font-size: 1rem;
+  }
+}
 
 /* Experiences Section */
 .experiencesSection {
   background-color: var(--color-light-gray);
-  padding: 104px 107px;
+  padding: 3rem 5rem;
   text-align: center;
-  max-width: 1512px;
   margin: 0 auto;
+}
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .experiencesSection {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .experiencesSection {
+    padding: 1rem;
+    margin: 3rem 0;
+  }
 }
 
 .sectionTitleCenter {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 500;
   color: var(--color-black);
   margin: 0 auto;
-  margin-top: 36px;
-  margin-bottom: 50px;
+  margin: 1rem 0;
   text-align: center;
-  max-width: 565px;
+}
+@media screen and (max-width: 590px) {
+  .sectionTitleCenter {
+    font-size: 1.5rem;
+  }
+}
+
+.cardWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110vh;
+  overflow: hidden;
+}
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .cardWrapper {
+    height: 80vh;
+  }
+}
+@media screen and (max-width: 590px) {
+  .cardWrapper {
+    height: 65vh;
+    padding: 1rem;
+  }
 }
 
 .experienceCard {
+  position: absolute;
   background-color: var(--color-white);
   border-radius: 20px;
   padding: 20px;
@@ -248,10 +392,29 @@
 
 .experienceImagePlaceholder {
   width: 100%;
-  height: 656px;
+  height: 450px;
   background-color: var(--color-dark-gray);
   border-radius: 20px;
   margin-bottom: 15px;
+}
+.experienceImagePlaceholder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .experienceImagePlaceholder {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 590px) {
+  .experienceImagePlaceholder {
+    flex-direction: column;
+    height: 250px;
+  }
 }
 
 .experienceTitle {
@@ -260,6 +423,12 @@
   color: var(--color-black);
   margin: 0 0 15px 0;
   white-space: nowrap;
+  text-align: left;
+}
+@media screen and (max-width: 590px) {
+  .experienceTitle {
+    font-size: 1.2rem;
+  }
 }
 
 .experienceDescription {
@@ -268,6 +437,7 @@
   color: var(--color-text);
   margin: 0;
   line-height: 1.5;
+  text-align: left;
 }
 
 /* Why Section */
@@ -276,11 +446,34 @@
   max-width: 1512px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .whySection {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .whySection {
+    padding: 1rem;
+    width: 100%;
+  }
+}
 
 .whyContent {
   display: flex;
   gap: 59px;
   align-items: center;
+}
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .whyContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .whyContent {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 .whyImage {
@@ -290,12 +483,33 @@
   border-radius: 20px;
   flex-shrink: 0;
 }
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .whyImage {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 590px) {
+  .whyImage {
+    width: 100%;
+    height: 300px;
+  }
+}
 
 .whyText {
   width: 477px;
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .whyText {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 590px) {
+  .whyText {
+    width: 100%;
+  }
 }
 
 .whyList {
@@ -305,6 +519,11 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+@media screen and (max-width: 590px) {
+  .whyList {
+    gap: 1rem;
+  }
 }
 
 .whyList li {
@@ -325,6 +544,11 @@
   color: var(--color-text);
   white-space: nowrap;
 }
+@media screen and (max-width: 590px) {
+  .whyList span {
+    white-space: normal;
+  }
+}
 
 /* CTA Section */
 .ctaSection {
@@ -336,6 +560,20 @@
   gap: 1.5rem;
   align-items: flex-start;
 }
+@media screen and (max-width: 1200px) and (min-width: 600px) {
+  .ctaSection {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .ctaSection {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+}
 
 .ctaTitle {
   font-size: 3rem;
@@ -343,6 +581,12 @@
   color: var(--color-black);
   margin: 0;
   white-space: nowrap;
+}
+@media screen and (max-width: 590px) {
+  .ctaTitle {
+    white-space: normal;
+    font-size: 1.5rem;
+  }
 }
 
 .ctaDescription {
@@ -352,71 +596,11 @@
   margin: 0;
   white-space: nowrap;
 }
-
-/* Footer */
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .heroContent {
-    padding: 0 60px;
-    gap: 40px;
-  }
-  .heroText {
-    width: auto;
-    flex: 1;
-  }
-  .heroImage {
-    width: auto;
-    flex: 1;
-  }
-  .aboutSection,
-  .experiencesSection,
-  .whySection,
-  .ctaSection {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-  .aboutContent {
-    flex-direction: column;
-  }
-  .aboutImage {
-    width: 100%;
-    max-width: 540px;
-  }
-  .aboutText {
-    width: 100%;
-  }
-  .whyContent {
-    flex-direction: column;
-  }
-  .whyImage {
-    width: 100%;
-    max-width: 592px;
-  }
-  .whyText {
-    width: 100%;
+@media screen and (max-width: 590px) {
+  .ctaDescription {
+    white-space: normal;
+    font-size: 1rem;
   }
 }
-@media (max-width: 768px) {
-  .heroTitle {
-    font-size: 28px;
-  }
-  .heroDescription {
-    font-size: 16px;
-  }
-  .sectionTitleCenter {
-    font-size: 24px;
-  }
-  .ctaTitle {
-    font-size: 28px;
-  }
-  .ctaDescription {
-    font-size: 16px;
-  }
-  .aboutSection,
-  .experiencesSection,
-  .whySection,
-  .ctaSection {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}/*# sourceMappingURL=page.module.css.map */
+
+/* Footer *//*# sourceMappingURL=page.module.css.map */

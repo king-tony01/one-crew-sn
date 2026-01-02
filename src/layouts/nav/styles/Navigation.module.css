@@ -1,8 +1,8 @@
 /* Design tokens */
 /* Navigation */
 .nav {
-  position: fixed;
-  top: 0;
+  position: sticky;
+  top: 2%;
   left: 2%;
   z-index: 100;
   background: rgba(255, 255, 255, 0.6);
@@ -32,12 +32,25 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media screen and (max-width: 590px) {
+  .nav .logoImage {
+    width: 2rem;
+    height: 2rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 .nav .logoText {
   font-size: 1.5rem;
   font-weight: 500;
   color: #000000;
   white-space: nowrap;
   margin: 0;
+}
+@media screen and (max-width: 590px) {
+  .nav .logoText {
+    font-size: 1rem;
+  }
 }
 .nav .navLinks {
   display: flex;
@@ -46,6 +59,25 @@
   list-style: none;
   margin: 0 1rem;
   padding: 0;
+}
+@media screen and (max-width: 590px) {
+  .nav .navLinks {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    display: none;
+    z-index: 100;
+    margin: 0;
+  }
+  .nav .navLinks.active {
+    display: block;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
 }
 .nav .navItem {
   display: flex;
@@ -56,6 +88,12 @@
   cursor: pointer;
   list-style: none;
 }
+@media screen and (max-width: 590px) {
+  .nav .navItem {
+    display: block;
+    text-align: left;
+  }
+}
 .nav .navLabel {
   font-size: 1rem;
   font-weight: 500;
@@ -64,6 +102,11 @@
   text-decoration: none;
   position: relative;
   padding: 0.7rem 0;
+}
+@media screen and (max-width: 590px) {
+  .nav .navLabel {
+    white-space: normal;
+  }
 }
 .nav .navLabel::before {
   position: absolute;
@@ -82,13 +125,26 @@
 .nav .navLabel.active::before {
   background-color: #f6821f;
 }
+.nav button {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+@media screen and (max-width: 590px) {
+  .nav button {
+    display: flex;
+  }
+}
 @media (max-width: 1200px) {
   .nav .nav {
     padding: 0.5rem;
   }
 }
-@media (max-width: 768px) {
-  .nav .nav {
-    position: fixed;
+@media screen and (max-width: 590px) {
+  .nav {
+    top: 1%;
   }
 }/*# sourceMappingURL=Navigation.module.css.map */

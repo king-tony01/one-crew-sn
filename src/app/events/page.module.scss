@@ -1,0 +1,199 @@
+/* Design tokens */
+$color-black: #000000;
+$color-orange: #f6821f;
+$color-text: #5e5e5e;
+$color-white: #ffffff;
+$color-green: #00a650;
+$color-light-gray: #f8f8f8;
+$color-gray: #efefef;
+$color-dark-gray: #d9d9d9;
+
+$font-space-grotesk: "Space Grotesk", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", "Roboto", sans-serif;
+
+/* Hero Section */
+.events_page {
+  .hero {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #fff7f0 0%,
+      #f3fff9 49.62%,
+      #fff 100%
+    );
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    margin: 0 auto;
+    height: 60vh;
+    padding: 5rem;
+
+    @media screen and (max-width: 1200px) and (min-width: 600px) {
+      padding: 2rem;
+      height: 40vh;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 590px) {
+      flex-direction: column;
+      height: 35vh;
+      padding: 1rem;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+  }
+
+  .heroText {
+    flex: 1;
+    // width: 677px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @media screen and (max-width: 1200px) and (min-width: 600px) {
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 590px) {
+      flex: unset;
+    }
+  }
+
+  .heroTitle {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+    color: $color-black;
+    margin: 0;
+
+    @media screen and (max-width: 590px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .heroTitle span {
+    display: block;
+  }
+
+  .heroDescription {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: normal;
+    color: $color-text;
+    margin: 0;
+    width: 100%;
+    @media screen and (max-width: 1200px) and (min-width: 600px) {
+      max-width: 70%;
+    }
+
+    @media screen and (max-width: 590px) {
+      font-size: 1rem;
+    }
+  }
+
+  .heroImage {
+    flex: 1;
+
+    @media screen and (max-width: 1200px) and (min-width: 600px) {
+      display: none;
+    }
+
+    @media screen and (max-width: 590px) {
+      display: none;
+    }
+  }
+
+  .heroImage img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+
+    @media screen and (max-width: 590px) {
+      width: 100%;
+      border: 2px solid red;
+    }
+  }
+
+  .primaryButton:hover {
+    opacity: 0.9;
+  }
+
+  .secondaryButton {
+    border: 1px solid var(--color-orange);
+    color: var(--color-orange);
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: var(--font-space-grotesk);
+    transition: opacity 0.3s ease;
+  }
+
+  .secondaryButton:hover {
+    opacity: 0.8;
+  }
+
+  .events {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 5rem;
+
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2rem;
+    }
+
+    @media screen and (max-width: 590px) {
+      padding: 1rem;
+      display: block;
+    }
+
+    .card {
+      background: $color-white;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      // &:nth-child(even) {
+      //   background: $color-light-gray;
+      // }
+
+      .evenPlaceholder {
+        width: 100%;
+        height: 25rem;
+        background: #eaeaea;
+        border-radius: 0.7rem;
+
+        @media screen and (max-width: 590px) {
+          height: 18rem;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          object-fit: cover;
+          border-radius: 0.5rem;
+        }
+      }
+
+      h3 {
+        color: $color-black;
+      }
+
+      p {
+        color: $color-text;
+      }
+    }
+  }
+}
