@@ -57,6 +57,10 @@
 .contact_page .heroTitle span {
   display: block;
 }
+.contact_page .heroImage img {
+  width: 100%;
+  height: 100%;
+}
 .contact_page .heroDescription {
   font-size: 1.2rem;
   font-weight: 400;

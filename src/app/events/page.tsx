@@ -112,8 +112,8 @@ export default function Events() {
               <Image
                 src={ex.image}
                 alt={ex.title + " illustration"}
-                width={100}
-                height={100}
+                width={1000}
+                height={1000}
                 quality={100}
               />
             </div>

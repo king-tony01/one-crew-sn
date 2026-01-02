@@ -69,6 +69,16 @@ $color-dark-gray: #d9d9d9;
     display: block;
   }
 
+  .heroImage {
+    // width: 100%;
+    // height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   .heroDescription {
     font-size: 1.2rem;
     font-weight: 400;
