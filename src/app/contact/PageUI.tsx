@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { act, useState } from "react";
+import { useState } from "react";
 
 function PageUI() {
   const [active, setActive] = useState(0);
@@ -61,6 +61,7 @@ function PageUI() {
             alt="Hero illustration"
             width={200}
             height={200}
+            quality={100}
           />
         </div>
       </section>

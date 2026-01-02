@@ -33,8 +33,42 @@ const values = [
 ];
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "About Us",
+  description:
+    "Learn more about One Crew Social Network's mission, values, and commitment to fostering meaningful connections through curated social, cultural, and business experiences.",
+  keywords: [
+    "about one crew",
+    "mission",
+    "values",
+    "community building",
+    "social impact",
+    "curated experiences",
+  ],
+  openGraph: {
+    title: "About Us - One Crew Social Network",
+    description:
+      "Learn more about One Crew Social Network's mission, values, and commitment to fostering meaningful connections through curated social, cultural, and business experiences.",
+    url: "https://onecrewsn.com/about",
+    type: "website",
+    images: [
+      {
+        url: "/about.png",
+        width: 1200,
+        height: 630,
+        alt: "About One Crew Social Network",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us - One Crew Social Network",
+    description:
+      "Learn more about One Crew Social Network's mission, values, and commitment to fostering meaningful connections.",
+    images: ["/about.png"],
+  },
+  alternates: {
+    canonical: "https://onecrewsn.com/about",
+  },
 };
 
 export default function About() {
@@ -67,6 +101,7 @@ export default function About() {
             alt="Hero illustration"
             width={200}
             height={200}
+            quality={100}
           />
         </div>
       </section>
@@ -80,6 +115,7 @@ export default function About() {
               alt="Mission illustration"
               width={300}
               height={300}
+              quality={100}
             />
           </div>
           <div className={styles.missionText}>

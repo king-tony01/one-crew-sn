@@ -1,0 +1,34 @@
+{
+  "name": "One Crew Social Network",
+  "short_name": "One Crew",
+  "description": "Curated refined social experiences connecting people, culture, and opportunity",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["social", "networking", "lifestyle", "business"],
+  "screenshots": [
+    {
+      "src": "/hero.svg",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "label": "One Crew Social Network Home"
+    }
+  ]
+}

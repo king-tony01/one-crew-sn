@@ -1,6 +1,48 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Experiences",
+  description:
+    "Explore One Crew Social Network's diverse portfolio of curated experiences designed to foster connection, engagement, and growth across social, cultural, and business domains.",
+  keywords: [
+    "experiences",
+    "events",
+    "motorsport",
+    "charity events",
+    "networking",
+    "lounges",
+    "community gatherings",
+    "business events",
+  ],
+  openGraph: {
+    title: "Experiences - One Crew Social Network",
+    description:
+      "Explore One Crew Social Network's diverse portfolio of curated experiences designed to foster connection, engagement, and growth across social, cultural, and business domains.",
+    url: "https://onecrewsn.com/events",
+    type: "website",
+    images: [
+      {
+        url: "/track.png",
+        width: 1200,
+        height: 630,
+        alt: "One Crew Social Network Experiences",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Experiences - One Crew Social Network",
+    description:
+      "Explore our diverse portfolio of curated experiences designed to foster connection and growth.",
+    images: ["/track.png"],
+  },
+  alternates: {
+    canonical: "https://onecrewsn.com/events",
+  },
+};
 
 export default function Events() {
   const experiences = [
@@ -59,6 +101,7 @@ export default function Events() {
             alt="Hero illustration"
             width={200}
             height={200}
+            quality={100}
           />
         </div>
       </section>

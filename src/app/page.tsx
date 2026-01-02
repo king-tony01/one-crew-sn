@@ -141,6 +141,7 @@ export default function Home() {
             alt="Hero illustration"
             width={200}
             height={200}
+            quality={100}
           />
         </div>
       </section>
@@ -149,7 +150,13 @@ export default function Home() {
       <section className={styles.aboutSection}>
         <div className={styles.aboutContent}>
           <div className={styles.aboutImage}>
-            <Image src={"/about.png"} alt="" width={200} height={200} />
+            <Image
+              src={"/about.png"}
+              alt=""
+              width={200}
+              height={200}
+              quality={100}
+            />
           </div>
           <div className={styles.aboutText}>
             <p className={styles.sectionLabel}>About One Crew</p>
@@ -238,6 +245,7 @@ export default function Home() {
                     alt=""
                     width={200}
                     height={200}
+                    quality={100}
                   />
                 </div>
                 <h3 className={styles.experienceTitle}>{experience.title}</h3>
@@ -254,7 +262,13 @@ export default function Home() {
       <section className={styles.whySection}>
         <div className={styles.whyContent}>
           <div className={styles.whyImage}>
-            <Image src={"/values.png"} alt="" width={200} height={200} />
+            <Image
+              src={"/values.png"}
+              alt=""
+              width={200}
+              height={200}
+              quality={100}
+            />
           </div>
           <div className={styles.whyText}>
             <p className={styles.sectionLabel}>Why One Crew</p>
