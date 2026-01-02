@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://onecrewsn.com"),
+  metadataBase: new URL("https://onecrewsocialnetwork.com"),
   title: {
     default: "One Crew Social Network",
     template: "%s | One Crew Social Network",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://onecrewsn.com",
+    url: "https://onecrewsocialnetwork.com",
     siteName: "One Crew Social Network",
     title: "One Crew Social Network",
     description:
@@ -109,8 +109,8 @@ export default function RootLayout({
     "@type": "Organization",
     name: "One Crew Social Network",
     alternateName: "One Crew",
-    url: "https://onecrewsn.com",
-    logo: "https://onecrewsn.com/logo.png",
+    url: "https://onecrewsocialnetwork.com",
+    logo: "https://onecrewsocialnetwork.com/logo.png",
     description:
       "Curated refined social experiences connecting people, culture, and opportunity",
     sameAs: [
@@ -122,7 +122,7 @@ export default function RootLayout({
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Service",
-      url: "https://onecrewsn.com/contact",
+      url: "https://onecrewsocialnetwork.com/contact",
     },
   };
 
