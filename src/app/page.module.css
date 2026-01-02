@@ -482,6 +482,13 @@
   background-color: var(--color-dark-gray);
   border-radius: 20px;
   flex-shrink: 0;
+  overflow: hidden;
+}
+.whyImage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media screen and (max-width: 1200px) and (min-width: 600px) {
   .whyImage {
@@ -492,6 +499,7 @@
   .whyImage {
     width: 100%;
     height: 300px;
+    border-radius: 1rem;
   }
 }
 

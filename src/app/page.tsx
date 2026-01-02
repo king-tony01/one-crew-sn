@@ -127,10 +127,10 @@ export default function Home() {
             connection and unlock value.
           </p>
           <div className={styles.heroButtons}>
-            <Link href="#experiences" className={styles.primaryButton}>
+            <Link href="/events" className={styles.primaryButton}>
               Discover Our Experiences
             </Link>
-            <Link href="#partnership" className={styles.secondaryButton}>
+            <Link href="/contact" className={styles.secondaryButton}>
               Partner With One Crew
             </Link>
           </div>
@@ -253,7 +253,9 @@ export default function Home() {
       {/* Why One Crew Section */}
       <section className={styles.whySection}>
         <div className={styles.whyContent}>
-          <div className={styles.whyImage}></div>
+          <div className={styles.whyImage}>
+            <Image src={"/values.png"} alt="" width={200} height={200} />
+          </div>
           <div className={styles.whyText}>
             <p className={styles.sectionLabel}>Why One Crew</p>
             <h2 className={styles.sectionTitle}>
