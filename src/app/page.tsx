@@ -139,9 +139,10 @@ export default function Home() {
           <Image
             src={"/hero.svg"}
             alt="Hero illustration"
-            width={200}
-            height={200}
+            width={1000}
+            height={1000}
             quality={100}
+            priority
           />
         </div>
       </section>
@@ -153,8 +154,8 @@ export default function Home() {
             <Image
               src={"/about.png"}
               alt=""
-              width={200}
-              height={200}
+              width={1000}
+              height={1000}
               quality={100}
             />
           </div>
@@ -243,8 +244,8 @@ export default function Home() {
                   <Image
                     src={experience.image}
                     alt=""
-                    width={200}
-                    height={200}
+                    width={1000}
+                    height={1000}
                     quality={100}
                   />
                 </div>
@@ -265,8 +266,8 @@ export default function Home() {
             <Image
               src={"/values.png"}
               alt=""
-              width={200}
-              height={200}
+              width={1000}
+              height={1000}
               quality={100}
             />
           </div>

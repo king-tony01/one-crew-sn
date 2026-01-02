@@ -99,8 +99,8 @@ export default function Events() {
           <Image
             src={"/hero.svg"}
             alt="Hero illustration"
-            width={200}
-            height={200}
+            width={1000}
+            height={1000}
             quality={100}
           />
         </div>

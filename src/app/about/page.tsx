@@ -99,8 +99,8 @@ export default function About() {
           <Image
             src={"/about.png"}
             alt="Hero illustration"
-            width={200}
-            height={200}
+            width={1000}
+            height={1000}
             quality={100}
           />
         </div>
@@ -113,8 +113,8 @@ export default function About() {
             <Image
               src={"/mission.png"}
               alt="Mission illustration"
-              width={300}
-              height={300}
+              width={100}
+              height={100}
               quality={100}
             />
           </div>
